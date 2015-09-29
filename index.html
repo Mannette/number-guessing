@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Number guessing</title>
+
+    <link rel="stylesheet" href="main.css">
+
+  </head>
+  <body ng-controller="randomNumber">
+    <input id="userInput" placeholder="Guess a number between 1-100" type="number" class="userInput" ng-model="userInput">
+    <button id="guess" ng-click="check()">Guess!</button>
+    <br><br>
+    <p id="message">{{ message }}</p>
+    <span id="number" ng-show="showNumber === true">The number was {{ shownNumber }}! Try again?!</span>
+    <br><br>
+    <button id="giveUp" ng-hide="guessed === false" ng-click="giveUp()">Give up?</button>
+    <button ng-module="retry" ng-show="showRetry === true" ng-click="startOver()">Start Over?</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
